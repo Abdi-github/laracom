@@ -19,6 +19,13 @@ up-b:
 	@make build
 	docker compose --env-file ./src/.env up -d
 
+prod-init:
+	@make up-b
+	@make app-install
+
+
+
+
 down:
 	docker compose --env-file ./src/.env down --remove-orphans
 
@@ -41,8 +48,10 @@ fresh:
 app:
 	docker compose --env-file ./src/.env exec app bash
 
-app-live:
-	docker-compose --env-file ./src/.env  run --rm --publish 5173:5173 app npm run dev -- --host
+app-install:
+	docker compose --env-file ./src/.env exec app composer install
+
+
 
 
 ps:
