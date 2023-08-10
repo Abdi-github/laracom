@@ -61,10 +61,12 @@ fresh:
 
 app:
 	docker compose -f docker-compose.yml --env-file ./src/.env exec app bash
+app-prod:
+	docker compose -f docker-compose.prod.yml --env-file ./src/.env exec app bash
 
 app-install:
 	docker compose -f docker-compose.yml --env-file ./src/.env exec app composer install
-	
+
 app-install-prod:
 	docker compose -f docker-compose.prod.yml --env-file ./src/.env exec app composer install  --no-dev --optimize-autoloader
 
