@@ -38,6 +38,9 @@ prod-init:
 down:
 	docker compose -f docker-compose.yml --env-file ./src/.env down --remove-orphans
 
+down-prod:
+	docker compose -f docker-compose.prod.yml --env-file ./src/.env down --remove-orphans
+
 down-v:
 	docker compose -f docker-compose.yml --env-file ./src/.env down --remove-orphans --volumes
 
