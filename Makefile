@@ -52,6 +52,8 @@ restart:
 
 destroy:
 	docker compose -f docker-compose.yml --env-file ./src/.env  down --rmi all --volumes --remove-orphans
+destroy-prod:
+	docker compose -f docker-compose.prod.yml --env-file ./src/.env  down --rmi all --volumes --remove-orphans
 
 
 fresh:
