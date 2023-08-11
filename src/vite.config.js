@@ -5,9 +5,9 @@ export default defineConfig({
     server: {
         // host: "0.0.0.0",
         hmr: {
-            //     // clientPort: 5173,
+            // clientPort: 5173,
             host: "localhost",
-            //     protocol: "ws",
+            protocol: "ws",
         },
         port: 8020,
     },
